@@ -19,6 +19,8 @@ end
 
 def handle_string(first_str)
   word = first_str
+  str_count = 1
+  e_count = first_str.count('e')
   loop do
     str = gets.chomp
     if str.empty?
@@ -29,8 +31,12 @@ def handle_string(first_str)
       exit
     end
     word += str
+    str_count += 1
+    e_count += str.count('e')
   end
   puts word
+  puts "The average string length was #{word.length.to_f / str_count}"
+  puts "The letter e was used #{e_count} times"
 end
 
 def is_num?(input)
